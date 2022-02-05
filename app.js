@@ -1,4 +1,4 @@
-const api_url = "https://api.agify.io/?name=joe";
+const api_url = "https://dog.ceo/api/breeds/image/random";
 
 // Defining async function
 async function getapi(url) {
@@ -6,8 +6,8 @@ async function getapi(url) {
   const response = await fetch(url);
 
   // Storing data in form of JSON
-  var data = await response.json();
-  console.log(data);
+  const data = await response.json();
+  document.getElementById("dog-img").src = data.message;
 }
 // Calling that async function
 getapi(api_url);
