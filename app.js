@@ -29,7 +29,7 @@ async function GetNationality(url) {
   const data = await response.json();
   document.getElementById(
     "nationality"
-  ).innerHTML = `${data.country[0].country_id}/ ${data.country[1].country_id}/ ${data.country[2].country_id}`;
+  ).innerHTML = `${data.country[0].country_id}, ${data.country[1].country_id} and ${data.country[2].country_id}`;
 }
 
 function GetName() {
@@ -49,25 +49,3 @@ function Predict() {
 }
 
 document.getElementById("predict-button").addEventListener("click", Predict);
-
-// // Function to define innerHTML for HTML table
-// function show(data) {
-//   let tab = `<tr>
-//           <th>Name</th>
-//           <th>Office</th>
-//           <th>Position</th>
-//           <th>Salary</th>
-//          </tr>`;
-
-//   // Loop to access all rows
-//   for (let r of data.list) {
-//     tab += `<tr>
-//     <td>${r.name} </td>
-//     <td>${r.office}</td>
-//     <td>${r.position}</td>
-//     <td>${r.salary}</td>
-// </tr>`;
-//   }
-//   // Setting innerHTML as tab variable
-//   document.getElementById("").innerHTML = tab;
-// }

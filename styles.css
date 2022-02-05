@@ -71,11 +71,11 @@ body {
 }
 
 table {
-  width: 500px;
+  width: 600px;
   height: 100px;
   color: white;
   box-shadow: -1px 12px 12px rgba(0, 0, 0, 0.5);
-  background-color: #0c1b2b;
+  background-color: #061729;
   text-align: center;
 }
 table,
@@ -83,8 +83,9 @@ td,
 th {
   padding: 20px;
   border: 1px solid lightblue;
+  border-collapse: collapse;
 }
-.header {
+th {
   background-color: #395169;
   font-weight: bold;
 }
