@@ -1,16 +1,18 @@
 const api_url = "https://dog.ceo/api/breeds/image/random";
 
-// Defining async function
+// async function
 async function GetApi(url) {
-  // Storing response
+  // To store response
   const response = await fetch(url);
-
   // Storing data in form of JSON
   const data = await response.json();
   document.getElementById("dog-img").src = data.message;
 }
-// Calling that async function
-GetApi(api_url);
+
+function GetName() {
+  let input_name = document.getElementById("name").value;
+  return input_name;
+}
 
 async function GetAge(url) {
   const response = await fetch(url);
@@ -32,20 +34,16 @@ async function GetNationality(url) {
   ).innerHTML = `${data.country[0].country_id}, ${data.country[1].country_id} and ${data.country[2].country_id}`;
 }
 
-function GetName() {
-  let input_name = document.getElementById("name").value;
-  return input_name;
-}
-
 function Predict() {
   var name = GetName();
-  document.getElementById("name-display").innerHTML = name;
   var age_url = "https://api.agify.io/?name=" + name;
-  GetAge(age_url);
   var gender_url = "https://api.genderize.io/?name=" + name;
-  GetGender(gender_url);
   var nationality_url = "https://api.nationalize.io/?name=" + name;
+  document.getElementById("name-display").innerHTML = name;
+  GetAge(age_url);
+  GetGender(gender_url);
   GetNationality(nationality_url);
 }
 
+GetApi(api_url);
 document.getElementById("predict-button").addEventListener("click", Predict);
