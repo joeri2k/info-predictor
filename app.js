@@ -1,4 +1,4 @@
-const api_url = "https://dog.ceo/api/breeds/image/random";
+const dog_url = "https://dog.ceo/api/breeds/image/random";
 
 // ----- async function that fetches a random dog picture --------
 async function GetApi(url) {
@@ -50,5 +50,5 @@ function Predict() {
   GetNationality(nationality_url);
 }
 
-GetApi(api_url);
+GetApi(dog_url);
 document.getElementById("predict-button").addEventListener("click", Predict);
